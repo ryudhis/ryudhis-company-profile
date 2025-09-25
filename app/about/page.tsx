@@ -8,7 +8,7 @@ export default function AboutPage() {
       <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
           <AnimatedSection className="max-w-4xl mx-auto text-center" direction="fade" duration={0.8}>
-            <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">About TechCorp</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">About Ryudhis Company</h1>
             <p className="text-xl md:text-2xl text-muted-foreground text-balance leading-relaxed">
               We are a team of passionate professionals dedicated to crafting exceptional digital experiences that drive
               business success through innovative technology solutions.
@@ -25,7 +25,7 @@ export default function AboutPage() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   Founded with a vision to bridge the gap between cutting-edge technology and practical business
-                  solutions, TechCorp has been at the forefront of digital transformation for over a decade.
+                  solutions, Ryudhis Company has been at the forefront of digital transformation for over a decade.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Our journey began with a simple belief: that technology should empower businesses to achieve their

@@ -43,11 +43,18 @@ export default function BlogPage() {
     <div className="flex flex-col min-h-screen">
       <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="max-w-4xl mx-auto text-center" direction="fade" duration={0.8}>
-            <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">Our Blog</h1>
+          <AnimatedSection
+            className="max-w-4xl mx-auto text-center"
+            direction="fade"
+            duration={0.8}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
+              Our Blog
+            </h1>
             <p className="text-xl md:text-2xl text-muted-foreground text-balance leading-relaxed">
-              Insights, updates, and thought leadership from the TechCorp team. Stay informed about the latest trends in
-              technology and business.
+              Insights, updates, and thought leadership from the Ryudhis Company
+              team. Stay informed about the latest trends in technology and
+              business.
             </p>
           </AnimatedSection>
         </div>
@@ -60,14 +67,20 @@ export default function BlogPage() {
               <AnimatedSection direction="up">
                 <div className="text-center py-12">
                   <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4" />
-                  <h2 className="text-2xl font-semibold mb-4">Loading posts...</h2>
-                  <p className="text-muted-foreground">Please wait while we fetch the latest blog posts.</p>
+                  <h2 className="text-2xl font-semibold mb-4">
+                    Loading posts...
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Please wait while we fetch the latest blog posts.
+                  </p>
                 </div>
               </AnimatedSection>
             ) : error ? (
               <AnimatedSection direction="up">
                 <div className="text-center py-12">
-                  <h2 className="text-2xl font-semibold mb-4 text-red-600">Error</h2>
+                  <h2 className="text-2xl font-semibold mb-4 text-red-600">
+                    Error
+                  </h2>
                   <p className="text-muted-foreground">{error}</p>
                 </div>
               </AnimatedSection>
@@ -80,7 +93,9 @@ export default function BlogPage() {
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-2">
                           <div className="flex items-center space-x-1">
                             <CalendarDays className="h-4 w-4" />
-                            <span>{new Date(post.createdAt).toLocaleDateString()}</span>
+                            <span>
+                              {new Date(post.createdAt).toLocaleDateString()}
+                            </span>
                           </div>
                         </div>
                         <CardTitle className="text-2xl hover:text-primary transition-colors">
@@ -89,7 +104,10 @@ export default function BlogPage() {
                       </CardHeader>
                       <CardContent>
                         <p className="text-muted-foreground leading-relaxed mb-4">
-                          {post.excerpt || post.content.replace(/<[^>]*>/g, "").substring(0, 200) + "..."}
+                          {post.excerpt ||
+                            post.content
+                              .replace(/<[^>]*>/g, "")
+                              .substring(0, 200) + "..."}
                         </p>
                         <Link
                           href={`/blog/${post.slug}`}
@@ -105,8 +123,12 @@ export default function BlogPage() {
             ) : (
               <AnimatedSection direction="up">
                 <div className="text-center py-12">
-                  <h2 className="text-2xl font-semibold mb-4">No blog posts yet</h2>
-                  <p className="text-muted-foreground">Check back soon for our latest insights and updates.</p>
+                  <h2 className="text-2xl font-semibold mb-4">
+                    No blog posts yet
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Check back soon for our latest insights and updates.
+                  </p>
                 </div>
               </AnimatedSection>
             )}
@@ -114,5 +136,5 @@ export default function BlogPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
