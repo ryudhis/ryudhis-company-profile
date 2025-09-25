@@ -1,12 +1,12 @@
 "use client"
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -14,35 +14,45 @@ const navigation = [
   { name: "Services", href: "/services" },
   { name: "Contact", href: "/contact" },
   { name: "Blog", href: "/blog" },
-]
+];
 
 export function Navigation() {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
+    setIsOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = "unset"
-    }
-  }, [isOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   return (
     <header className="sticky px-4 lg:px-8 top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-primary">Ryudhis Company</span>
-          </Link>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <button
+            onClick={() => router.push("/")}
+            className="flex items-center space-x-2 cursor-pointer"
+          >
+            <span className="text-2xl font-bold text-primary">
+              Ryudhis Company
+            </span>
+          </button>
         </motion.div>
 
         <motion.nav
@@ -58,11 +68,13 @@ export function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
             >
-              <Link
-                href={item.href}
+              <button
+                onClick={() => router.push(item.href)}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary relative",
-                  pathname === item.href ? "text-primary" : "text-muted-foreground",
+                  "text-sm font-medium transition-colors hover:text-primary relative cursor-pointer",
+                  pathname === item.href
+                    ? "text-primary"
+                    : "text-muted-foreground"
                 )}
               >
                 {item.name}
@@ -75,7 +87,7 @@ export function Navigation() {
                     transition={{ duration: 0.2 }}
                   />
                 )}
-              </Link>
+              </button>
             </motion.div>
           ))}
         </motion.nav>
@@ -86,8 +98,12 @@ export function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild variant="outline" size="sm">
-              <Link href="/admin/login">Admin</Link>
+            <Button
+              onClick={() => router.push("/admin/login")}
+              variant="outline"
+              size="sm"
+            >
+              Admin
             </Button>
           </motion.div>
 
@@ -100,7 +116,10 @@ export function Navigation() {
             whileTap={{ scale: 0.95 }}
             aria-label="Toggle menu"
           >
-            <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+            <motion.div
+              animate={{ rotate: isOpen ? 180 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.div>
           </motion.button>
@@ -135,18 +154,20 @@ export function Navigation() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
-                      <Link
-                        href={item.href}
+                      <button
+                        onClick={() => {
+                          router.push(item.href);
+                          setIsOpen(false);
+                        }}
                         className={cn(
-                          "block py-3 px-4 text-lg font-medium rounded-md transition-colors hover:bg-accent",
+                          "block py-3 px-4 text-lg font-medium rounded-md transition-colors hover:bg-accent w-full text-left cursor-pointer",
                           pathname === item.href
                             ? "text-primary bg-accent/50"
-                            : "text-muted-foreground hover:text-foreground",
+                            : "text-muted-foreground hover:text-foreground"
                         )}
-                        onClick={() => setIsOpen(false)}
                       >
                         {item.name}
-                      </Link>
+                      </button>
                     </motion.div>
                   ))}
 
@@ -154,12 +175,20 @@ export function Navigation() {
                     className="pt-4 border-t"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: navigation.length * 0.1 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: navigation.length * 0.1,
+                    }}
                   >
-                    <Button asChild variant="outline" className="w-full bg-transparent">
-                      <Link href="/admin/login" onClick={() => setIsOpen(false)}>
-                        Admin Login
-                      </Link>
+                    <Button
+                      onClick={() => {
+                        router.push("/admin/login");
+                        setIsOpen(false);
+                      }}
+                      variant="outline"
+                      className="w-full bg-transparent"
+                    >
+                      Admin Login
                     </Button>
                   </motion.div>
                 </div>
@@ -169,5 +198,5 @@ export function Navigation() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }
