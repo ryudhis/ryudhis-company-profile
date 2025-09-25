@@ -99,6 +99,7 @@ export function Navigation() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Button
+              className="cursor-pointer"
               onClick={() => router.push("/admin/login")}
               variant="outline"
               size="sm"
@@ -108,7 +109,7 @@ export function Navigation() {
           </motion.div>
 
           <motion.button
-            className="md:hidden p-2 rounded-md hover:bg-accent"
+            className="md:hidden p-2 rounded-md hover:bg-accent cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -186,7 +187,7 @@ export function Navigation() {
                         setIsOpen(false);
                       }}
                       variant="outline"
-                      className="w-full bg-transparent"
+                      className="w-full bg-transparent cursor-pointer"
                     >
                       Admin Login
                     </Button>
