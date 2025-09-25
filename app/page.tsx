@@ -1,102 +1,238 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, Users, Zap, Shield } from "lucide-react";
+import {
+  AnimatedSection,
+  AnimatedCard,
+} from "@/components/animations/animated-section";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col min-h-screen">
+      <section className="relative bg-gradient-to-br from-primary/5 via-background to-accent/5 py-24 md:py-32">
+        <div className="container mx-auto px-4">
+          <AnimatedSection
+            className="max-w-4xl mx-auto text-center"
+            direction="fade"
+            duration={0.8}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
+              Professional Technology Solutions
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground text-balance mb-8 leading-relaxed">
+              We craft accessible, pixel-perfect digital experiences that blend
+              thoughtful design with robust engineering for modern businesses.
+            </p>
+            <AnimatedSection direction="up" delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="text-lg px-8">
+                  <Link href="/services">
+                    Our Services <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-8 bg-transparent"
+                >
+                  <Link href="/contact">Get in Touch</Link>
+                </Button>
+              </div>
+            </AnimatedSection>
+          </AnimatedSection>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose TechCorp
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+              We combine innovation, reliability, and expertise to deliver
+              exceptional results for your business.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection stagger className="grid md:grid-cols-3 gap-8">
+            <AnimatedCard>
+              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Zap className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4">
+                    Innovation First
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    We leverage cutting-edge technologies and methodologies to
+                    create solutions that drive your business forward.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedCard>
+
+            <AnimatedCard>
+              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Shield className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4">
+                    Reliable & Secure
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Built with security and reliability at the core, ensuring
+                    your systems perform flawlessly when it matters most.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedCard>
+
+            <AnimatedCard>
+              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Users className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4">Expert Team</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Our experienced professionals work closely with you to
+                    understand your needs and deliver tailored solutions.
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedCard>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <AnimatedSection
+            className="max-w-3xl mx-auto text-center"
+            direction="up"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8 text-balance">
+              Let&#39;s discuss how we can help you achieve your technology
+              goals and drive growth.
+            </p>
+            <Button asChild size="lg" className="text-lg px-8">
+              <Link href="/contact">
+                Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <footer className="bg-primary text-primary-foreground py-12 mt-auto">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Ryudhis Company</h3>
+              <p className="text-primary-foreground/80 leading-relaxed">
+                Professional technology solutions for modern businesses.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-primary-foreground/80">
+                <li>
+                  <Link
+                    href="/about"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    Blog
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Support</h4>
+              <ul className="space-y-2 text-primary-foreground/80">
+                <li>
+                  <Link
+                    href="/contact"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    Help Center
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Connect</h4>
+              <ul className="space-y-2 text-primary-foreground/80">
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    LinkedIn
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    Twitter
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    GitHub
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/60">
+            <p>&copy; 2025 Ryudhis Company. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
