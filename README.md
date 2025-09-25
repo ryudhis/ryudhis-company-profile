@@ -73,36 +73,34 @@ A modern, professional company profile website built with Next.js, TypeScript, P
 
 ## Project Structure
 
-\`\`\`
-├── app/                    # Next.js app directory
-│   ├── admin/             # Admin panel pages
-│   │   ├── dashboard/     # Admin dashboard
-│   │   ├── blog/          # Blog management
-│   │   ├── settings/      # Account management
-│   │   └── messages/      # Contact message management
-│   ├── api/               # API routes
-│   │   ├── auth/          # Authentication endpoints
-│   │   ├── admin/         # Admin endpoints
-│   │   ├── blog/          # Blog API endpoints
-│   │   ├── contact/       # Contact form endpoint
-│   │   └── messages/      # Message management endpoints
-│   ├── /                  # Public home pages
-│   ├── about/             # Public about pages
-│   ├── services/          # Public services pages
-│   ├── contact/           # Public contact pages
-│   └──  blog/              # Public blog pages
-├── components/            # React components
-│   ├── admin/            # Admin-specific components
-│   ├── animations/       # Custom framer motion components
-│   └── ui/               # shadcn/ui components
-├── lib/                  # Utility functions
-├── hooks/                # Custom hooks
-├── types/                # Typescript declared global types
-├── prisma/               # Database schema and seed file
-│   ├── schema.prisma     # Database schema
-│   └── seed.tsx           # Database seeding script
+├── app/ # Next.js app directory
+│ ├── admin/ # Admin panel pages
+│ │ ├── dashboard/ # Admin dashboard
+│ │ ├── blog/ # Blog management
+│ │ ├── settings/ # Account management
+│ │ └── messages/ # Contact message management
+│ ├── api/ # API routes
+│ │ ├── auth/ # Authentication endpoints
+│ │ ├── admin/ # Admin endpoints
+│ │ ├── blog/ # Blog API endpoints
+│ │ ├── contact/ # Contact form endpoint
+│ │ └── messages/ # Message management endpoints
+│ ├── page.tsx # Public home page
+│ ├── about/ # Public about pages
+│ ├── services/ # Public services pages
+│ ├── contact/ # Public contact pages
+│ └── blog/ # Public blog pages
+├── components/ # React components
+│ ├── admin/ # Admin-specific components
+│ ├── animations/ # Custom framer motion components
+│ └── ui/ # shadcn/ui components
+├── lib/ # Utility functions
+├── hooks/ # Custom React hooks
+├── types/ # TypeScript declared global types
+├── prisma/ # Database schema and seed file
+│ ├── schema.prisma # Database schema
+│ └── seed.tsx # Database seeding script
 └── README.md
-\`\`\`
 
 ## Key Features Explained
 
