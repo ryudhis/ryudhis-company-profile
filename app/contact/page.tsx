@@ -103,11 +103,17 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen">
       <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
-          <AnimatedSection className="max-w-4xl mx-auto text-center" direction="fade" duration={0.8}>
-            <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">Get in Touch</h1>
+          <AnimatedSection
+            className="max-w-4xl mx-auto text-center"
+            direction="fade"
+            duration={0.8}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-balance mb-6">
+              Get in Touch
+            </h1>
             <p className="text-xl md:text-2xl text-muted-foreground text-balance leading-relaxed">
-              Ready to start your next project? We&#39;d love to hear from you. Let&#39;s discuss how we can help bring your
-              vision to life.
+              Ready to start your next project? We&#39;d love to hear from you.
+              Let&#39;s discuss how we can help bring your vision to life.
             </p>
           </AnimatedSection>
         </div>
@@ -125,7 +131,10 @@ export default function ContactPage() {
                   {isSubmitted && (
                     <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-2">
                       <CheckCircle className="h-5 w-5 text-green-600" />
-                      <p className="text-green-800">Thank you for your message! We&#39;ll get back to you soon.</p>
+                      <p className="text-green-800">
+                        Thank you for your message! We&#39;ll get back to you
+                        soon.
+                      </p>
                     </div>
                   )}
 
@@ -145,9 +154,16 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           disabled={isSubmitting}
-                          className={cn("mt-1", errors.name && "border-destructive")}
+                          className={cn(
+                            "mt-1",
+                            errors.name && "border-destructive"
+                          )}
                         />
-                        {errors.name && <p className="text-sm text-destructive mt-1">{errors.name}</p>}
+                        {errors.name && (
+                          <p className="text-sm text-destructive mt-1">
+                            {errors.name}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <Label htmlFor="email">Email *</Label>
@@ -158,9 +174,16 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           disabled={isSubmitting}
-                          className={cn("mt-1", errors.email && "border-destructive")}
+                          className={cn(
+                            "mt-1",
+                            errors.email && "border-destructive"
+                          )}
                         />
-                        {errors.email && <p className="text-sm text-destructive mt-1">{errors.email}</p>}
+                        {errors.email && (
+                          <p className="text-sm text-destructive mt-1">
+                            {errors.email}
+                          </p>
+                        )}
                       </div>
                     </div>
                     <div>
@@ -183,11 +206,23 @@ export default function ContactPage() {
                         onChange={handleChange}
                         disabled={isSubmitting}
                         rows={6}
-                        className={cn("mt-1", errors.message && "border-destructive")}
+                        className={cn(
+                          "mt-1",
+                          errors.message && "border-destructive"
+                        )}
                       />
-                      {errors.message && <p className="text-sm text-destructive mt-1">{errors.message}</p>}
+                      {errors.message && (
+                        <p className="text-sm text-destructive mt-1">
+                          {errors.message}
+                        </p>
+                      )}
                     </div>
-                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
@@ -198,10 +233,12 @@ export default function ContactPage() {
             <AnimatedSection direction="right" delay={0.2}>
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
+                  <h2 className="text-3xl font-bold mb-6">
+                    Contact Information
+                  </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    We&#39;re here to help you with your technology needs. Reach out to us through any of the following
-                    channels.
+                    We&#39;re here to help you with your technology needs. Reach
+                    out to us through any of the following channels.
                   </p>
                 </div>
 
@@ -213,8 +250,12 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Email</h3>
-                        <p className="text-muted-foreground">hello@techcorp.com</p>
-                        <p className="text-muted-foreground">support@techcorp.com</p>
+                        <p className="text-muted-foreground">
+                          hello@ryudhiscompany.com
+                        </p>
+                        <p className="text-muted-foreground">
+                          support@ryudhiscompany.com
+                        </p>
                       </div>
                     </div>
                   </AnimatedCard>
@@ -226,8 +267,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Phone</h3>
-                        <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                        <p className="text-muted-foreground">+1 (555) 987-6543</p>
+                        <p className="text-muted-foreground">+62 88888888888</p>
+                        <p className="text-muted-foreground">+62 88888888888</p>
                       </div>
                     </div>
                   </AnimatedCard>
@@ -239,8 +280,10 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Office</h3>
-                        <p className="text-muted-foreground">123 Technology Drive</p>
-                        <p className="text-muted-foreground">San Francisco, CA 94105</p>
+                        <p className="text-muted-foreground">Mawar</p>
+                        <p className="text-muted-foreground">
+                          Tangerang Selatan, Banten, Indonesia
+                        </p>
                       </div>
                     </div>
                   </AnimatedCard>
@@ -252,8 +295,12 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Business Hours</h3>
-                        <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                        <p className="text-muted-foreground">Saturday: 10:00 AM - 4:00 PM</p>
+                        <p className="text-muted-foreground">
+                          Monday - Friday: 9:00 AM - 6:00 PM
+                        </p>
+                        <p className="text-muted-foreground">
+                          Saturday: 10:00 AM - 4:00 PM
+                        </p>
                       </div>
                     </div>
                   </AnimatedCard>
@@ -262,9 +309,12 @@ export default function ContactPage() {
                 <AnimatedSection direction="up" delay={0.4}>
                   <Card className="bg-primary text-primary-foreground">
                     <CardContent className="p-6">
-                      <h3 className="font-semibold mb-2">Need Immediate Support?</h3>
+                      <h3 className="font-semibold mb-2">
+                        Need Immediate Support?
+                      </h3>
                       <p className="text-primary-foreground/80 mb-4">
-                        For urgent technical issues, our support team is available 24/7.
+                        For urgent technical issues, our support team is
+                        available 24/7.
                       </p>
                       <Button variant="secondary" size="sm">
                         Emergency Support
@@ -278,5 +328,5 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
