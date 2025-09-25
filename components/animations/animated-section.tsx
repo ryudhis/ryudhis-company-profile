@@ -68,8 +68,6 @@ export function AnimatedSection({
       }
     : undefined
 
-  const itemVariants = stagger ? getVariants() : undefined
-
   if (stagger) {
     return (
       <motion.div

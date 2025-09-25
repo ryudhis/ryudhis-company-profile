@@ -33,7 +33,12 @@ export function generateToken(user: User): string {
 
 export function verifyToken(token: string): User | null {
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as any
+    const decoded = jwt.verify(token, JWT_SECRET) as {
+      userId: string;
+      email: string;
+      name: string | null;
+      role: string;
+    };
     return {
       id: decoded.userId,
       email: decoded.email,

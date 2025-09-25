@@ -82,7 +82,7 @@ export function AdminProfileForm({ user }: AdminProfileFormProps) {
       })
 
       router.refresh()
-    } catch (error) {
+    } catch {
       setErrors({ general: "Network error. Please try again." })
     } finally {
       setIsLoading(false)

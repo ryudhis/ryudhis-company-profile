@@ -89,7 +89,7 @@ export function AdminPasswordForm() {
         newPassword: "",
         confirmPassword: "",
       })
-    } catch (error) {
+    } catch {
       setErrors({ general: "Network error. Please try again." })
     } finally {
       setIsLoading(false)

@@ -83,7 +83,7 @@ export function PostForm({ post }: PostFormProps) {
       } else {
         setError(data.error || "Failed to save post")
       }
-    } catch (error) {
+    } catch {
       setError("An error occurred. Please try again.")
     } finally {
       setIsLoading(false)
