@@ -4,8 +4,7 @@ import { useEffect, useState } from "react"
 import { useParams, notFound } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { CalendarDays, Clock, ArrowLeft, Loader2 } from "lucide-react"
+import { CalendarDays, ArrowLeft, Loader2 } from "lucide-react";
 import { AnimatedSection } from "@/components/animations/animated-section"
 
 export default function BlogPostPage() {

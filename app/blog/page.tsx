@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CalendarDays, Clock, ArrowRight, Loader2 } from "lucide-react"
+import { CalendarDays, ArrowRight, Loader2 } from "lucide-react";
 import { AnimatedSection } from "@/components/animations/animated-section"
 
 export default function BlogPage() {
